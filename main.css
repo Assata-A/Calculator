@@ -1,0 +1,61 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(255, 231, 235), rgb(253, 207, 215));
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+/* selects element button with class of calculator-grid   */
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 2x;
+    border-color: rgba(216, 216, 216, 0.226);
+    outline: none;
+    background-color: rgba(179, 120, 120, 0.151);
+}
+
+.calculator-grid > button:hover{
+    background-color: rgba(253, 242, 244, 0.459);
+}
+
+.spanTwo{
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(133, 97, 97, 0.26);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    /* wraps to next line when input gets too long */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+  
+.output .previousOutput{
+    color: rgba(128, 62, 62, 0.774);
+    font-size: 1.5rem;
+}
+
+.output .currentInput{
+    color: rgba(65, 23, 23, 0.945);
+    font-size: 2rem;
+}
+
